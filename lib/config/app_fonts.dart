@@ -1,0 +1,4 @@
+enum AppFont {
+  satoshi,
+  roboto,
+}

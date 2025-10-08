@@ -38,6 +38,7 @@ dependencies:
   scrollable_list_tabview: ^0.2.0-nullsafety
   flutter_screenutil: ^5.9.3
   provider: ^6.1.5+1
+  google_fonts: ^6.3.2
 
 dev_dependencies:
   flutter_test:
