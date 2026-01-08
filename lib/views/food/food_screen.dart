@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/config/app_colors.dart';
 import 'package:foodpanda_clone/core/widgets/custom_text_widget.dart';
+import 'package:foodpanda_clone/views/resturant_details/restaurant_detail_screen.dart';
 
 class FoodScreen extends StatefulWidget {
   const FoodScreen({Key? key}) : super(key: key);
@@ -124,19 +125,20 @@ class TopSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextWidget(
-                        text: "Here's 50% off & free\ndelivery on your first\norder!",
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                        text:
+                            "Here's 50% off & free\ndelivery on your first\norder!",
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                       const SizedBox(height: 12),
                       Row(
                         children: [
                           CustomTextWidget(
-                          text:   'Start ordering',
-                              color: Colors.white.withOpacity(0.95),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                            text: 'Start ordering',
+                            color: Colors.white.withOpacity(0.95),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
                           ),
                           const SizedBox(width: 8),
                           const Icon(
@@ -228,10 +230,10 @@ class BankCodesPromo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomTextWidget(
-               text:    'Save more\nwith bank\ncodes',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                  text: 'Save more\nwith bank\ncodes',
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
                 ),
               ],
             ),
@@ -380,9 +382,17 @@ class ResturationSection extends StatelessWidget {
             color: Colors.black87,
           ),
           const SizedBox(height: 16),
-          RestaurantCardWidget(),
-          const SizedBox(height: 16),
-          RestaurantCardWidget(),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RestaurantDetailScreen(),
+                ),
+              );
+            },
+            child: RestaurantCardWidget(),
+          ),
         ],
       ),
     );
@@ -567,24 +577,24 @@ class RestaurantCardWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const CustomTextWidget(
-                    text:   'Support for Gaza - WFP',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
+                      text: 'Support for Gaza - WFP',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
                     ),
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.orange, size: 18),
                         const SizedBox(width: 4),
-                         CustomTextWidget(
+                        CustomTextWidget(
                           text: '5.0',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         ),
                         CustomTextWidget(
-                     text:     ' (1000+)',
-                            fontSize: 13,
-                            color: Colors.grey[600],
+                          text: ' (1000+)',
+                          fontSize: 13,
+                          color: Colors.grey[600],
                         ),
                       ],
                     ),
